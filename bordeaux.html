@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="utf-8">
+    <title data-i18n="bordeaux.pageTitleTag">Bordeaux — VinoVoyage</title>
+    <meta content="An introduction to Bordeaux: Left Bank and Right Bank terroirs, classic and new-wave producers, and a curated wine selection." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tight font-display text-primary dark:text-white">VINO<span class="text-accent">VOYAGE</span></a>
+
+            <nav class="hidden md:flex items-center space-x-10">
+                <ul class="flex items-center space-x-8 text-sm font-semibold tracking-tight">
+                    <li><a href="index.html#regions" class="text-primary dark:text-slate-200 hover:text-accent transition-colors" data-i18n="nav.regions">Regions</a></li>
+                    <li><a href="bordeaux.html" class="text-accent">Bordeaux</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button id="lang-toggle" type="button" data-i18n-attr="aria-label:toggle.langAria"
+                        aria-label="Switch language"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border border-border dark:border-slate-700 text-xs font-bold text-primary dark:text-slate-200 hover:border-accent hover:text-accent transition-all">ES</button>
+                <button id="theme-toggle" type="button" data-i18n-attr="aria-label:toggle.themeAria" aria-label="Toggle dark mode"
+                        class="p-2.5 rounded-full border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:border-accent hover:text-accent transition-all">
+                    <span id="theme-icon-sun" hidden><i class="fa-solid fa-sun"></i></span>
+                    <span id="theme-icon-moon"><i class="fa-solid fa-moon"></i></span>
+                </button>
+                <a href="https://github.com/ecamacho/vinovoyage" target="_blank" rel="noopener noreferrer"
+                   class="hidden sm:inline-flex items-center space-x-2 text-sm font-bold px-5 py-2.5 rounded-full border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:border-accent hover:text-accent transition-all">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <button id="mobile-menu-button" type="button" data-i18n-attr="aria-label:toggle.menuAria" aria-label="Toggle menu" aria-expanded="false"
+                        class="md:hidden p-2.5 rounded-xl border border-border dark:border-slate-700 text-primary dark:text-slate-200">
+                    <span id="menu-icon-open"><i class="fa-solid fa-bars"></i></span>
+                    <span id="menu-icon-close" hidden><i class="fa-solid fa-xmark"></i></span>
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-menu" hidden class="md:hidden border-t border-border dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur">
+            <ul class="px-6 py-4 space-y-4 text-sm font-semibold">
+                <li><a href="index.html#regions" class="block text-primary dark:text-slate-200" data-i18n="nav.regions">Regions</a></li>
+                <li><a href="bordeaux.html" class="block text-accent">Bordeaux</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Region Hero -->
+        <section class="relative text-white py-24 bg-cover bg-center"
+                 style="background-image: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0.55) 55%, rgba(15,23,42,0.92) 100%), url('bordeaux_recommendations/photos/region_header_chateau_la_tour_de_by.jpg');">
+            <div class="max-w-7xl mx-auto px-6">
+                <a href="index.html#regions" class="inline-flex items-center space-x-2 text-sm font-semibold text-white/70 hover:text-white transition-colors mb-8">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span data-i18n="bordeaux.allRegions">All Regions</span>
+                </a>
+                <p class="text-xs font-bold uppercase tracking-widest text-accent mb-4" data-i18n="bordeaux.countryLabel">France</p>
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6">Bordeaux</h1>
+                <p id="region-meta" class="text-sm text-white/60 font-semibold uppercase tracking-widest"></p>
+            </div>
+            <a href="https://commons.wikimedia.org/wiki/File:Chateau_La_Tour_de_By_Vignoble.jpg" target="_blank" rel="noopener noreferrer"
+               class="absolute bottom-4 right-6 text-[11px] font-medium text-white/50 hover:text-white/80 transition-colors" data-i18n="bordeaux.photoCreditLine">
+                Ch&acirc;teau La Tour de By, M&eacute;doc &middot; Photo: Slywire &middot; CC BY-SA 4.0
+            </a>
+        </section>
+
+        <!-- Introduction -->
+        <section class="py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-primary dark:text-white mb-8" data-i18n="bordeaux.introHeading">An Introduction to Bordeaux</h2>
+                <div id="region-intro" class="space-y-6">
+                    <!-- Introduction paragraphs injected by js/bordeaux.js -->
+                    <p class="text-muted dark:text-slate-400" data-i18n="bordeaux.loadingIntro">Loading introduction&hellip;</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- At a glance -->
+        <section class="py-24 bg-surface dark:bg-slate-900 border-y border-border dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-primary dark:text-white mb-16 text-center" data-i18n="bordeaux.terroirHeading">Terroir at a Glance</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-950 border border-border dark:border-slate-800">
+                        <h4 class="text-sm font-bold text-accent uppercase tracking-widest mb-2" data-i18n="bordeaux.leftBankLabel">Left Bank</h4>
+                        <h3 class="text-xl font-display font-bold text-primary dark:text-white mb-3">Médoc &amp; Graves</h3>
+                        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed" data-i18n="bordeaux.leftBankBody">Gravelly, fast-draining soil that favors Cabernet Sauvignon: firm tannin, cassis and graphite fruit, cedar and tobacco-leaf aromatics, built to age for decades.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-950 border border-border dark:border-slate-800">
+                        <h4 class="text-sm font-bold text-accent uppercase tracking-widest mb-2" data-i18n="bordeaux.rightBankLabel">Right Bank</h4>
+                        <h3 class="text-xl font-display font-bold text-primary dark:text-white mb-3">Saint-Émilion &amp; Pomerol</h3>
+                        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed" data-i18n="bordeaux.rightBankBody">Cooler clay and limestone that suits Merlot and Cabernet Franc: plusher, more perfumed in youth — red plum, black cherry, mocha, violets.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-950 border border-border dark:border-slate-800">
+                        <h4 class="text-sm font-bold text-accent uppercase tracking-widest mb-2" data-i18n="bordeaux.whitesLabel">Whites &amp; Sauternes</h4>
+                        <h3 class="text-xl font-display font-bold text-primary dark:text-white mb-3">Graves &amp; Sauternais</h3>
+                        <p class="text-sm text-muted dark:text-slate-400 leading-relaxed" data-i18n="bordeaux.whitesBody">Sauvignon Blanc and Sémillon make age-worthy dry whites, while noble rot along the Garonne yields the honeyed, apricot-scented dessert wines of Sauternes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wine Selection -->
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary dark:text-white mb-6" data-i18n="bordeaux.selectionHeading">The Selection</h2>
+                    <p class="text-muted dark:text-slate-400 leading-relaxed font-medium max-w-2xl mx-auto" data-i18n="bordeaux.selectionBody">Classic and new-wave Bordeaux, Left Bank and Right Bank, across price ranges — a starting list for getting to know the region.</p>
+                    <div class="flex flex-wrap justify-center gap-4 mt-8">
+                        <button class="filter-tab px-8 py-3 rounded-xl text-sm font-bold bg-primary text-white dark:bg-white dark:text-primary shadow-lg transition-all" data-filter="all" data-i18n="bordeaux.filterAll">All Wines</button>
+                        <button class="filter-tab px-8 py-3 rounded-xl text-sm font-bold border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:bg-white dark:hover:bg-slate-800 hover:shadow-md transition-all" data-filter="left" data-i18n="bordeaux.leftBankLabel">Left Bank</button>
+                        <button class="filter-tab px-8 py-3 rounded-xl text-sm font-bold border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:bg-white dark:hover:bg-slate-800 hover:shadow-md transition-all" data-filter="right" data-i18n="bordeaux.rightBankLabel">Right Bank</button>
+                        <button class="filter-tab px-8 py-3 rounded-xl text-sm font-bold border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:bg-white dark:hover:bg-slate-800 hover:shadow-md transition-all" data-filter="white" data-i18n="bordeaux.filterWhite">Whites</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="wine-grid">
+                    <!-- Wine cards injected by js/bordeaux.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Wine Detail Modal -->
+    <div id="wine-modal" hidden class="fixed inset-0 z-[60] items-start md:items-center justify-center p-4 md:p-8 bg-primary/60 backdrop-blur-sm overflow-y-auto">
+        <div class="relative bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full my-8 p-8 md:p-12">
+            <button id="wine-modal-close" type="button" data-i18n-attr="aria-label:bordeaux.modalCloseAria" aria-label="Close"
+                    class="absolute top-6 right-6 w-10 h-10 rounded-full border border-border dark:border-slate-700 flex items-center justify-center text-primary dark:text-slate-200 hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-primary transition-all">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="wine-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-950 pt-24 pb-12 border-t border-border dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="index.html" class="text-2xl font-bold font-display text-primary dark:text-white">VINO<span class="text-accent">VOYAGE</span></a>
+                <p class="text-xs font-bold text-muted dark:text-slate-400 uppercase tracking-widest text-center" data-i18n="footer.tagline">A personal journey through the world's wine regions.</p>
+                <a href="https://github.com/ecamacho/vinovoyage" target="_blank" rel="noopener noreferrer" class="text-xl text-primary dark:text-slate-300 hover:text-accent transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/regions.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/bordeaux.js"></script>
+</body>
+</html>

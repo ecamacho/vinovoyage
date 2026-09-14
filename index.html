@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/theme.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="utf-8">
+    <title data-i18n="home.pageTitle">VinoVoyage — A Journey Through Wine Regions</title>
+    <meta content="Follow along as I learn the world's great wine regions: terroir, history, grape varietals, and a curated wine selection to start exploring." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tight font-display text-primary dark:text-white">VINO<span class="text-accent">VOYAGE</span></a>
+
+            <nav class="hidden md:flex items-center space-x-10">
+                <ul class="flex items-center space-x-8 text-sm font-semibold tracking-tight">
+                    <li><a href="index.html#regions" class="text-accent" data-i18n="nav.regions">Regions</a></li>
+                    <li><a href="bordeaux.html" class="text-primary dark:text-slate-200 hover:text-accent transition-colors">Bordeaux</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button id="lang-toggle" type="button" data-i18n-attr="aria-label:toggle.langAria"
+                        aria-label="Switch language"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border border-border dark:border-slate-700 text-xs font-bold text-primary dark:text-slate-200 hover:border-accent hover:text-accent transition-all">ES</button>
+                <button id="theme-toggle" type="button" data-i18n-attr="aria-label:toggle.themeAria" aria-label="Toggle dark mode"
+                        class="p-2.5 rounded-full border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:border-accent hover:text-accent transition-all">
+                    <span id="theme-icon-sun" hidden><i class="fa-solid fa-sun"></i></span>
+                    <span id="theme-icon-moon"><i class="fa-solid fa-moon"></i></span>
+                </button>
+                <a href="https://github.com/ecamacho/vinovoyage" target="_blank" rel="noopener noreferrer"
+                   class="hidden sm:inline-flex items-center space-x-2 text-sm font-bold px-5 py-2.5 rounded-full border border-border dark:border-slate-700 text-primary dark:text-slate-200 hover:border-accent hover:text-accent transition-all">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <button id="mobile-menu-button" type="button" data-i18n-attr="aria-label:toggle.menuAria" aria-label="Toggle menu" aria-expanded="false"
+                        class="md:hidden p-2.5 rounded-xl border border-border dark:border-slate-700 text-primary dark:text-slate-200">
+                    <span id="menu-icon-open"><i class="fa-solid fa-bars"></i></span>
+                    <span id="menu-icon-close" hidden><i class="fa-solid fa-xmark"></i></span>
+                </button>
+            </div>
+        </div>
+        <nav id="mobile-menu" hidden class="md:hidden border-t border-border dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur">
+            <ul class="px-6 py-4 space-y-4 text-sm font-semibold">
+                <li><a href="index.html#regions" class="block text-accent" data-i18n="nav.regions">Regions</a></li>
+                <li><a href="bordeaux.html" class="block text-primary dark:text-slate-200">Bordeaux</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[600px] flex items-center overflow-hidden bg-surface dark:bg-slate-900 hero-pattern">
+            <div class="max-w-7xl mx-auto px-6 w-full py-20">
+                <div class="max-w-3xl animate-fade-up">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+                        <span data-i18n="hero.badge">A personal wine-learning journal</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-8 text-primary dark:text-white" data-i18n="hero.heading">
+                        Learning the World, <span class="text-accent">One Region</span> at a Time.
+                    </h1>
+                    <p class="text-lg text-muted dark:text-slate-400 font-medium leading-relaxed max-w-xl mb-10" data-i18n="hero.body">
+                        VinoVoyage documents my journey into the world's great wine regions — their terroirs, history,
+                        grape varietals, and a curated selection of bottles to start understanding each one.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <a href="#regions" class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-accent dark:bg-white dark:text-primary dark:hover:bg-slate-200 transition-all shadow-xl shadow-primary/10" data-i18n="hero.cta">Explore Regions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regions Section -->
+        <section id="regions" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="max-w-2xl mb-16">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary dark:text-white mb-6" data-i18n="regions.heading">Wine Regions</h2>
+                    <p class="text-muted dark:text-slate-400 leading-relaxed font-medium" data-i18n="regions.body">Each region gets its own deep dive: terroir, history, grape varietals, and a hand-picked wine selection to start tasting your way through it.</p>
+                </div>
+
+                <div id="regions-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Region cards injected by js/home.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-950 pt-24 pb-12 border-t border-border dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="index.html" class="text-2xl font-bold font-display text-primary dark:text-white">VINO<span class="text-accent">VOYAGE</span></a>
+                <p class="text-xs font-bold text-muted dark:text-slate-400 uppercase tracking-widest text-center" data-i18n="footer.tagline">A personal journey through the world's wine regions.</p>
+                <a href="https://github.com/ecamacho/vinovoyage" target="_blank" rel="noopener noreferrer" class="text-xl text-primary dark:text-slate-300 hover:text-accent transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/regions.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

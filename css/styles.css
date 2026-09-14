@@ -1,0 +1,62 @@
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark body {
+  background-color: #020617; /* slate-950 */
+  color: #F1F5F9; /* slate-100 */
+}
+
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+html.dark .glass {
+  background: rgba(2, 6, 23, 0.7); /* slate-950 */
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 */
+}
+
+.wine-card:hover {
+  border-color: #3B82F6;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #CBD5E1; }
+
+html.dark ::-webkit-scrollbar-track { background: #0F172A; }
+html.dark ::-webkit-scrollbar-thumb { background: #334155; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Decorative background for the home hero (no photography needed there) */
+.hero-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+html.dark .hero-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+}
+
+/* Fallback for a region card before it has its own header photo */
+.region-card-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 55%, #3B82F6 100%);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#wine-modal {
+  transition: opacity 0.2s ease-out;
+}
